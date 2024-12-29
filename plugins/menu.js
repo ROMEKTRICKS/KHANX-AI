@@ -37,6 +37,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• allmenu
 ┃◈┃• ownermenu
 ┃◈┃• othermenu
+┃◈┃• logo <text>
 ┃◈┃• repo
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
@@ -95,9 +96,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• Insta
 ┃◈┃• apk
 ┃◈┃• img
+┃◈┃• spotify
 ┃◈┃• play
 ┃◈┃• play2
 ┃◈┃• play3
+┃◈┃• tt2
 ┃◈┃• audio
 ┃◈┃• video
 ┃◈┃• video2
@@ -105,6 +108,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• ytmp4
 ┃◈┃• song
 ┃◈┃• darama
+┃◈┃• git
 ┃◈┃• gdrive
 ┃◈┃• smovie
 ┃◈┃• baiscope 
@@ -153,6 +157,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         let dec = `╭━━〔 *Group Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• grouplink
+┃◈┃• kickall
+┃◈┃• kickall2
+┃◈┃• kickall3
 ┃◈┃• add
 ┃◈┃• remove
 ┃◈┃• kick
@@ -228,6 +235,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         let dec = `╭━━〔 *Fun Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• insult
+┃◈┃• pickup
+┃◈┃• ship
+┃◈┃• character
 ┃◈┃• hack
 ┃◈┃• joke
 ┃◈┃• hrt
@@ -288,8 +298,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     try {
         let dec = `╭━━〔 *Other Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
+┃◈┃• vv
+┃◈┃• pair
+┃◈┃• pair2
 ┃◈┃• fact
-┃◈┃• font
+┃◈┃• fancy
 ┃◈┃• define
 ┃◈┃• news
 ┃◈┃• movie

@@ -31,7 +31,7 @@ async (conn, mek, m, { from, quoted, reply }) => {
 ┇๏ *Auto Sticker:* ${isEnabled(config.AUTO_STICKER) ? "Enabled ✅" : "Disabled ❌"}
 ┇๏ *Auto Voice:* ${isEnabled(config.AUTO_VOICE) ? "Enabled ✅" : "Disabled ❌"}
 ┇๏ *Owner React:* ${isEnabled(config.OWNER_REACT) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Heart React:* ${isEnabled(config.HEART_REACT) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Custom Reacts:* ${isEnabled(config.CUSTOM_REACT) ? "Enabled ✅" : "Disabled ❌"}
 ┇๏ *Auto React:* ${isEnabled(config.AUTO_REACT) ? "Enabled ✅" : "Disabled ❌"}
 ┇๏ *Delete Links:* ${isEnabled(config.DELETE_LINKS) ? "Enabled ✅" : "Disabled ❌"}
 ┇๏ *Anti-Link:* ${isEnabled(config.ANTI_LINK) ? "Enabled ✅" : "Disabled ❌"}
@@ -39,8 +39,7 @@ async (conn, mek, m, { from, quoted, reply }) => {
 ┇๏ *Auto Typing:* ${isEnabled(config.AUTO_TYPING) ? "Enabled ✅" : "Disabled ❌"}
 ┇๏ *Auto Recording:* ${isEnabled(config.AUTO_RECORDING) ? "Enabled ✅" : "Disabled ❌"}
 ┇๏ *Always Online:* ${isEnabled(config.ALWAYS_ONLINE) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Always Offline:* ${isEnabled(config.ALWAYS_OFFLINE) ? "Enabled ✅" : "Disabled ❌"}
-┇๏ *Currently Status:* ${isEnabled(config.CURRENT_STATUS) ? "Enabled ✅" : "Disabled ❌"}
+┇๏ *Public Mode:* ${isEnabled(config.PUBLIC_MODE) ? "Enabled ✅" : "Disabled ❌"}
 ┇๏ *Read Message:* ${isEnabled(config.READ_MESSAGE) ? "Enabled ✅" : "Disabled ❌"}
 ╰━━━━━━━━━━━━──┈⊷
 > ${config.DESCRIPTION}`;

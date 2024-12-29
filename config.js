@@ -11,6 +11,10 @@ PREFIX: process.env.PREFIX || ".",
 // add your prifix for bot
 BOT_NAME: process.env.BOT_NAME || "KHAN-AI",
 // add bot namw here for menu
+CUSTOM_REACT: process.env.CUSTOM_REACT || "true",
+// make this true for custum emoji react    
+CUSTOM_REACT_EMOJIS: process.env.CUSTOM_REACT_EMOJIS || "💝,💖,💗,❤️‍🔥,❤️‍🩹,❤️,🩷,🧡,💛,💚,💙,🩵,💜,🤎,🖤,🩶,🤍",
+// chose custom react emojis by yourself 
 DELETE_LINKS: process.env.DELETE_LINKS || "false",
 // automatic delete links witho remove member 
 OWNER_NUMBER: process.env.OWNER_NUMBER || "92342758XXXX",
@@ -51,10 +55,8 @@ OWNER_REACT: process.env.OWNER_REACT || "false",
 // make it true or fasle for only react on owner msg only 
 ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "false",
 // maks true for always online 
-ALWAYS_OFFLINE: process.env.ALWAYS_OFFLINE || "false",
-//make true for always ofline 
-CURRENT_STATUS: process.env.CURRENT_STATUS || "false",
-// make true for online ofline by app
+PUBLIC_MODE: process.env.PUBLIC_MODE || "true",
+// make false if want private mod
 AUTO_TYPING: process.env.AUTO_TYPING || "false",
 // true for automatic show typing   
 AUTO_RECORDING: process.env.AUTO_RECORDING || "false"

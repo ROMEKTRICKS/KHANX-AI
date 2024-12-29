@@ -34,6 +34,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• Insta
 ┃◈┃• apk
 ┃◈┃• img
+┃◈┃• tt2
+┃◈┃• git
+┃◈┃• spotify
 ┃◈┃• play
 ┃◈┃• play2
 ┃◈┃• play3
@@ -53,6 +56,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ╭━━〔 *Group Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• grouplink
+┃◈┃• kickall
+┃◈┃• kickall2
+┃◈┃• kickall3
 ┃◈┃• add
 ┃◈┃• remove
 ┃◈┃• kick
@@ -91,6 +97,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• owner
 ┃◈┃• menu
 ┃◈┃• menu2
+┃◈┃• vv
 ┃◈┃• listcmd
 ┃◈┃• allmenu
 ┃◈┃• repo
@@ -111,6 +118,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈╭─────────────·๏
 ┃◈┃• insult
 ┃◈┃• hack
+┃◈┃• ship
+┃◈┃• character
+┃◈┃• pickup 
 ┃◈┃• joke
 ┃◈┃• hrt
 ┃◈┃• hpy
@@ -201,6 +211,10 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ╭━━〔 *Other Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• fact
+┃◈┃• pair
+┃◈┃• pair2
+┃◈┃• fancy
+┃◈┃• logo <text>
 ┃◈┃• define
 ┃◈┃• news
 ┃◈┃• movie

@@ -1,6 +1,61 @@
 const axios = require('axios')
+const fetch = require('node-fetch');
 const {cmd , commands} = require('../command')
+// ship command 
+const toM = (a) => '@' + a.split('@')[0];
+cmd({
+    pattern: "ship",
+    alias: ["cup", "love"],
+    desc: "Randomly pairs the command user with another group member.",
+    react: "❤️",
+    category: "fun",
+    filename: __filename,
+}, 
+async (conn, mek, m, { from, isGroup, groupMetadata, reply }) => {
+    try {
+        // Ensure command is used in a group
+        if (!isGroup) {
+            return reply("This command can only be used in groups.");
+        }
 
+        // Get group participants
+        const participants = groupMetadata.participants.map(p => p.id);
+
+        if (participants.length < 2) {
+            return reply("Not enough members to pair.");
+        }
+
+        // Sender of the command
+        const sender = m.sender;
+
+        // Randomly select another participant
+        let randomParticipant;
+        do {
+            randomParticipant = participants[Math.floor(Math.random() * participants.length)];
+        } while (randomParticipant === sender);
+
+        // Pairing message
+        const message = `${toM(sender)} ❤️ ${toM(randomParticipant)}\nCongratulations 💖🍻`;
+
+        // Send the message with contextInfo
+        await conn.sendMessage(from, {
+            text: message,
+            contextInfo: {
+                mentionedJid: [sender, randomParticipant], // Mention both users
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363354023106228@newsletter',
+                    newsletterName: 'JawadTechX',
+                    serverMessageId: 143,
+                },
+            },
+        });
+    } catch (e) {
+        console.error("Error in ship command:", e);
+        reply("An error occurred while processing the command. Please try again.");
+    }
+});
 // Insult
 
 cmd({
@@ -139,3 +194,101 @@ cmd({
   }
 });
 
+// pick-up line
+
+cmd({
+    pattern: "pickupline",
+    alias: ["pickup"],
+    desc: "Get a random pickup line from the API.",
+    react: "💬",
+    category: "fun",
+    filename: __filename,
+}, 
+async (conn, mek, m, { from, reply }) => {
+    try {
+        // Fetch pickup line from the API
+        const res = await fetch('https://api.popcat.xyz/pickuplines');
+        
+        if (!res.ok) {
+            throw new Error(`API request failed with status ${res.status}`);
+        }
+
+        const json = await res.json();
+
+        // Log the API response (for debugging purposes)
+        console.log('JSON response:', json);
+
+        // Format the pickup line message
+        const pickupLine = `*Here's a pickup line for you:*\n\n"${json.pickupline}"\n\n> *© Powered By JawadTechX*`;
+
+        // Send the pickup line to the chat
+        await conn.sendMessage(from, { text: pickupLine }, { quoted: m });
+
+    } catch (error) {
+        console.error("Error in pickupline command:", error);
+        reply("Sorry, something went wrong while fetching the pickup line. Please try again later.");
+    }
+});
+
+// char
+
+cmd({
+    pattern: "character",
+    alias: ["char"],
+    desc: "Check the character of a mentioned user.",
+    react: "🔥",
+    category: "fun",
+    filename: __filename,
+}, 
+async (conn, mek, m, { from, isGroup, text, reply }) => {
+    try {
+        // Ensure the command is used in a group
+        if (!isGroup) {
+            return reply("This command can only be used in groups.");
+        }
+
+        // Extract the mentioned user
+        const mentionedUser = m.message.extendedTextMessage?.contextInfo?.mentionedJid?.[0];
+        if (!mentionedUser) {
+            return reply("Please mention a user whose character you want to check.");
+        }
+
+        // Define character traits
+        const userChar = [
+            "Sigma",
+            "Generous",
+            "Grumpy",
+            "Overconfident",
+            "Obedient",
+            "Good",
+            "Simp",
+            "Kind",
+            "Patient",
+            "Pervert",
+            "Cool",
+            "Helpful",
+            "Brilliant",
+            "Sexy",
+            "Hot",
+            "Gorgeous",
+            "Cute",
+        ];
+
+        // Randomly select a character trait
+        const userCharacterSelection =
+            userChar[Math.floor(Math.random() * userChar.length)];
+
+        // Message to send
+        const message = `Character of @${mentionedUser.split("@")[0]} is *${userCharacterSelection}* 🔥⚡`;
+
+        // Send the message with mentions
+        await conn.sendMessage(from, {
+            text: message,
+            mentions: [mentionedUser],
+        }, { quoted: m });
+
+    } catch (e) {
+        console.error("Error in character command:", e);
+        reply("An error occurred while processing the command. Please try again.");
+    }
+});
